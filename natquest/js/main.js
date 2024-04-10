@@ -1,7 +1,7 @@
 //The main.js is like the control hub for the Phaser 3 game
 //This is where game intialization information is held
-//Scene order also matters to a degree, for example, CompUI is always listed as last scene
-//This makes sure CompUi is always the foremost item & not hidden beneath other elements
+//Scene order also matters to a degree, for example, GameUI is always listed as last scene
+//This makes sure GameUi is always the foremost item & not hidden beneath other elements
 
 
 //The scenes that are listed under "scenes: " are referenced here
@@ -52,7 +52,7 @@ const config = {
     NewScene,
     InsideRoom,
     NextRoom,
-    CompUI,
+    GameUI,
   ],
   interpolation: true,
 };
