@@ -1,5 +1,5 @@
 
-class PlayerAnimations extends Phaser.Scene {
+export class PlayerAnimations extends Phaser.Scene {
   constructor() {
     super({ key: 'PlayerAnimations' });
 
