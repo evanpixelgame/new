@@ -32,7 +32,7 @@ export default class OpenWorld extends Phaser.Scene {
 
 
      this.scene.remove('Preloader');
-     this.scene.remove('StartMenu');
+    // this.scene.remove('StartMenu');
      this.scene.remove('Settings');
      this.scene.remove('NameSelect');
      this.scene.remove('CharSelect');
