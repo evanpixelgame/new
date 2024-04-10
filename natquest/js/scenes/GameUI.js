@@ -1,7 +1,7 @@
 //NOTES: make it so that the icons revert to where they should be after rescale
 //maybe switch file name to GameUI for better clarity
 
-class GameUI extends Phaser.Scene {
+export class GameUI extends Phaser.Scene {
   constructor() {
     super({ key: 'GameUI' });
 
