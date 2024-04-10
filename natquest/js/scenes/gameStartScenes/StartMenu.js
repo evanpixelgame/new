@@ -101,7 +101,8 @@ export class StartMenu extends Phaser.Scene {
       })
         .setOrigin(0.5);
     }
-
+    // Add a start button
+    const startButton = this.add.text(vw / 5, vh / 5, 'Start', { 
     // Set a callback function for the button click event
     startButton.on('pointerdown', function () {
       const orientation = window.screen.orientation.type;
