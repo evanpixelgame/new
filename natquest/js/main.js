@@ -1,6 +1,6 @@
 import PlayerControls from './scenes/PlayerControls.js';
-import NextRoom from './scenes/NextRoom.js'; 
-import NewScene from './scenes/NewScene.js'; 
+import NextRoom from './scenes/scenes/NextRoom.js'; 
+import NewScene from './scenes/scenes/NewScene.js'; 
 
 const width = window.innerWidth;
 const height = window.innerHeight;
