@@ -1,4 +1,4 @@
-//import { NameSelect } from "./NameSelect.js"; //once testing done, make this the imported scene and next transition
+import { NameSelect } from "./NameSelect.js";
 import { WelcomePlayer } from "./WelcomePlayer.js"; //get rid of this eventually when testing is done and scene order is normal
 
 export class StartMenu extends Phaser.Scene {
@@ -51,8 +51,8 @@ export class StartMenu extends Phaser.Scene {
       repeat: -1,  // Infinite loop
     });
 
-    // Add a  button
-    const Button = this.add.text(vw / 5, vh / 5, '', { ////////////////////////////////////////////////////////
+    // Add a start button
+    const startButton = this.add.text(vw / 5, vh / 5, 'Start', { ////////////////////////////////////////////////////////
       fontSize: '26px',
       fontFamily: 'knewave',
       fill: '#c92b23',
@@ -101,8 +101,7 @@ export class StartMenu extends Phaser.Scene {
       })
         .setOrigin(0.5);
     }
-    // Add a start button
-    const startButton = this.add.text(vw / 5, vh / 5, 'Start', { 
+
     // Set a callback function for the button click event
     startButton.on('pointerdown', function () {
       const orientation = window.screen.orientation.type;
@@ -111,7 +110,6 @@ export class StartMenu extends Phaser.Scene {
       console.log('Click event in landscape mode');
       window.removeEventListener('orientationchange', this.handleResizeOnReorientation);
       //  this.lockScreenOrientation();
-       this.scene.add('WelcomePlayer', WelcomePlayer);
       this.scene.start('WelcomePlayer');
       // Transition to the main scene when the button is clicked
     }, this);
