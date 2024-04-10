@@ -9,6 +9,7 @@
 //OpenWorld for example is listed in the index.html so it doesn't need to be imported here
 
 import PlayerControls from './scenes/PlayerControls.js';
+import OpenWorld from  "./scenes/scenes/OpenWorld.js";
 import NewScene from './scenes/scenes/NewScene.js';
 import InsideRoom from './scenes/scenes/InsideRoom.js';
 import NextRoom from './scenes/scenes/NextRoom.js';
@@ -18,7 +19,6 @@ import NextRoom from './scenes/scenes/NextRoom.js';
    import { NameSelect } from    "./scenes/gameStartScenes/NameSelect.js";
    import { CharSelect } from "./scenes/gameStartScenes/CharSelect.js";
   import { WelcomePlayer } from  "./scenes/gameStartScenes/WelcomePlayer.js";
-  import OpenWorld from  "./scenes/scenes/OpenWorld.js";
    import { MobileControls } from "./scenes/MobileControls.js";
    import { GameUI } from    "./scenes/GameUI.js";
    import { PlayerAnimations } from "./scenes/PlayerAnimations.js";
