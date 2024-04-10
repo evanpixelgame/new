@@ -1,3 +1,6 @@
+import { NameSelect } from "./NameSelect.js";
+import { WelcomePlayer } from "./WelcomePlayer.js"; //get rid of this eventually when testing is done and scene order is normal
+
 export class StartMenu extends Phaser.Scene {
   constructor() {
     super({ key: 'StartMenu' });
