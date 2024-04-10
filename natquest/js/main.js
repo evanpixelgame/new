@@ -12,6 +12,16 @@ import PlayerControls from './scenes/PlayerControls.js';
 import NewScene from './scenes/scenes/NewScene.js';
 import InsideRoom from './scenes/scenes/InsideRoom.js';
 import NextRoom from './scenes/scenes/NextRoom.js';
+    import Preloader from "./scenes/gameStartScenes/Preloader.js";
+   import StartMenu from "./scenes/gameStartScenes/StartMenu.js";
+  import Settings from    "./scenes/gameStartScenes/Settings.js";
+   import NameSelect from    "./scenes/gameStartScenes/NameSelect.js";
+   import CharSelect from "./scenes/gameStartScenes/CharSelect.js";
+  import WelcomePlayer from  "./scenes/gameStartScenes/WelcomePlayer.js";
+  import OpenWorld from  "./scenes/scenes/OpenWorld.js";
+   import MobileControls from "./scenes/MobileControls.js";
+   import GameUI from    "./scenes/GameUI.js";
+   import PlayerAnimations from "./scenes/PlayerAnimations.js";
 
 //set the width and height of the canvas equal the width and height of the screen it's being played on
 const width = window.innerWidth;
