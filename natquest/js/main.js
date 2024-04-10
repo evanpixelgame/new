@@ -1,3 +1,9 @@
+//The main.js is like the control hub for the Phaser 3 game
+//This is where game intialization information is held
+//Scene order also matters to a degree, for example, CompUI is always listed as last scene
+//This makes sure CompUi is always the foremost item & not hidden beneath other elements
+
+
 //The scenes that are listed under "scenes: " are referenced here
 //They can also be referenced in the index.html for their location to be globally available
 //OpenWorld for example is listed in the index.html so it doesn't need to be imported here
@@ -7,7 +13,7 @@ import NewScene from './scenes/scenes/NewScene.js';
 import InsideRoom from './scenes/scenes/InsideRoom.js';
 import NextRoom from './scenes/scenes/NextRoom.js';
 
-
+//set the width and height of the canvas equal the width and height of the screen it's being played on
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -15,16 +21,17 @@ const config = {
   type: Phaser.AUTO,
   width: width,
   height: height,
-  backgroundColor: '#FDD5D5',
+  backgroundColor: '#FDD5D5', //this is the pink "border" that is around the screen
+  //it helps it maintain aspect ratio when resized, could be replaced with border image
   parent: 'game-container',
   pixelArt: true,
   scale: {
-     mode: Phaser.Scale.RESIZE,
+     mode: Phaser.Scale.RESIZE, //this just makes it so that the game canvas always tries to automatically adjust so that it fills the available screen
   },
   physics: {
-    default: "matter",
-    matter: {
-      gravity: { y: 0 },
+    default: "matter", //this sets the physics engine to use matter.js instead of arcade physics
+    matter: { //here the defaults for the matter.js physics engine are set
+      gravity: { y: 0 }, //since its a top down "2.5D" game, there is no inherent gravity. if certain scenes have sidescroller aspect or things need to fall "down", adjust the gravity as needed per scene
       debug: true,
     },
   },
