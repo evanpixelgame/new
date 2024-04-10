@@ -1,4 +1,5 @@
 import { NameSelect } from "./NameSelect.js";
+import { Settings } from "./Settings.js";
 import { WelcomePlayer } from "./WelcomePlayer.js"; //get rid of this eventually when testing is done and scene order is normal
 
 export class StartMenu extends Phaser.Scene {
@@ -110,6 +111,7 @@ export class StartMenu extends Phaser.Scene {
       console.log('Click event in landscape mode');
       window.removeEventListener('orientationchange', this.handleResizeOnReorientation);
       //  this.lockScreenOrientation();
+       this.scene.start('WelcomePlayer', WelcomePlayer);
       this.scene.start('WelcomePlayer');
       // Transition to the main scene when the button is clicked
     }, this);
