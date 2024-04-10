@@ -51,8 +51,8 @@ export class StartMenu extends Phaser.Scene {
       repeat: -1,  // Infinite loop
     });
 
-    // Add a start button
-    const startButton = this.add.text(vw / 5, vh / 5, 'Start', { ////////////////////////////////////////////////////////
+    // Add a  button
+    const Button = this.add.text(vw / 5, vh / 5, '', { ////////////////////////////////////////////////////////
       fontSize: '26px',
       fontFamily: 'knewave',
       fill: '#c92b23',
@@ -110,6 +110,7 @@ export class StartMenu extends Phaser.Scene {
       console.log('Click event in landscape mode');
       window.removeEventListener('orientationchange', this.handleResizeOnReorientation);
       //  this.lockScreenOrientation();
+       this.scene.add('WelcomePlayer');
       this.scene.start('WelcomePlayer');
       // Transition to the main scene when the button is clicked
     }, this);
