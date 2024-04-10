@@ -1,6 +1,6 @@
 'use strict'
 
-class MobileControls extends Phaser.Scene {
+export class MobileControls extends Phaser.Scene {
   constructor() {
     super({
       key: 'MobileControls'
