@@ -1,9 +1,9 @@
 //NOTES: make it so that the icons revert to where they should be after rescale
 //maybe switch file name to GameUI for better clarity
 
-class CompUI extends Phaser.Scene {
+class GameUI extends Phaser.Scene {
   constructor() {
-    super({ key: 'CompUI' });
+    super({ key: 'GameUI' });
 
     this.dropdownContainer = null;
   }
@@ -296,4 +296,4 @@ class CompUI extends Phaser.Scene {
   }
 
 }
-window.CompUI = CompUI;
+window.GameUI = GameUI;
