@@ -18,4 +18,4 @@ class GameManager {
   }
 }
 
-export const gameManager = new GameManager();
+const gameManager = new GameManager();
