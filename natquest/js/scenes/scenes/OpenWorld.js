@@ -31,7 +31,7 @@ export default class OpenWorld extends Phaser.Scene {
     if (this.sys.game.device.os.android || this.sys.game.device.os.iOS) {
       this.scene.launch('MobileControls', { player: this.player, speed: this.speed });
     }
-    this.scene.launch('CompUI', { gameScene: this });
+    this.scene.launch('GameUI', { gameScene: this });
     this.scene.launch('PlayerAnimations', { player: this.player, speed: this.speed });
 
     const map = this.make.tilemap({ key: 'map' });
