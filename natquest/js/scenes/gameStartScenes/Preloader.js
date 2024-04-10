@@ -62,7 +62,7 @@ export class Preloader extends Phaser.Scene {
     this.load.on('complete', () => {
       progressText.destroy(); // Remove the progress text when loading is complete
       progressBar.destroy(); // Remove the progress bar when loading is complete
-      game.scene.add('StartMenu', StartMenu);
+      this.scene.add('StartMenu', StartMenu);
       this.scene.start('StartMenu');
     });
   }
