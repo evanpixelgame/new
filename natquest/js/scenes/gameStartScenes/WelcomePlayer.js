@@ -1,5 +1,5 @@
 //import { gameManager } from '../../gameState.js';
-import OpenWorld from './scenes/OpenWorld.js';
+import OpenWorld from '../scenes/OpenWorld.js';
 export class WelcomePlayer extends Phaser.Scene {
   constructor() {
     super({ key: 'WelcomePlayer' });
