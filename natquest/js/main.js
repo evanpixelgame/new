@@ -1,3 +1,7 @@
+//The scenes that are listed under "scenes: " are referenced here
+//They can also be referenced in the index.html for their location to be globally available
+//OpenWorld for example is listed in the index.html so it doesn't need to be imported here
+
 import PlayerControls from './scenes/PlayerControls.js';
 import NewScene from './scenes/scenes/NewScene.js'; 
 import InsideRoom from './scenes/scenes/InsideRoom.js';
