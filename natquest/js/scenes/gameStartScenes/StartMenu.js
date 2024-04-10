@@ -1,4 +1,4 @@
-import { NameSelect } from "./NameSelect.js";
+//import { NameSelect } from "./NameSelect.js"; //once testing done, make this the imported scene and next transition
 import { WelcomePlayer } from "./WelcomePlayer.js"; //get rid of this eventually when testing is done and scene order is normal
 
 export class StartMenu extends Phaser.Scene {
