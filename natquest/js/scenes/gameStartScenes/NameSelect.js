@@ -1,4 +1,4 @@
-class NameSelect extends Phaser.Scene {
+export class NameSelect extends Phaser.Scene {
   constructor() {
     super({ key: 'NameSelect' });
     this.playerName = '';
