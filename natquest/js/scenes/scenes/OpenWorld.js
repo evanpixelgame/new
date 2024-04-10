@@ -1,6 +1,6 @@
-import { PlayerSprite } from './PlayerSprite.js';
-import { sensorMapSet, createCollisionObjects } from './mapSetter.js';
-import { sensorHandler } from './collisionHandler.js';
+import { PlayerSprite } from '../PlayerSprite.js';
+import { sensorMapSet, createCollisionObjects } from '../mapSetter.js';
+import { sensorHandler } from '../collisionHandler.js';
 
 export default class OpenWorld extends Phaser.Scene {
   constructor() {
