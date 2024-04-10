@@ -1,4 +1,4 @@
-class Settings extends Phaser.Scene {
+export class Settings extends Phaser.Scene {
   constructor() {
     super({ key: 'Settings' });
   }
