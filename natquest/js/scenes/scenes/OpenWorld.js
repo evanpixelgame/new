@@ -1,4 +1,8 @@
 import { PlayerSprite } from '../PlayerSprite.js';
+import { GameUI } from '../GameUI.js';
+import { PlayerControls } from '../PlayerControls.js';
+import { PlayerAnimations } from '../PlayerAnimations.js';
+import { MobileControls } from '../MobileControls.js';
 import { sensorMapSet, createCollisionObjects } from '../collisionHandlers/mapSetter.js';
 import { sensorHandler } from '../collisionHandlers/openWorldCollisionHandler.js';
 //import { NextScene } from './NextScene.js';
