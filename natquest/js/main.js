@@ -3,11 +3,6 @@
 //Scene order also matters to a degree, for example, GameUI is always listed as last scene
 //This makes sure GameUi is always the foremost item & not hidden beneath other elements
 
-
-//The scenes that are listed under "scenes: " are referenced here
-//They can also be referenced in the index.html for their location to be globally available
-//OpenWorld for example is listed in the index.html so it doesn't need to be imported here
-
 import PlayerControls from './scenes/PlayerControls.js';
 import OpenWorld from  "./scenes/scenes/OpenWorld.js";
 import NewScene from './scenes/scenes/NewScene.js';
