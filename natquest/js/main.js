@@ -13,16 +13,7 @@ const config = {
   parent: 'game-container',
   pixelArt: true,
   scale: {
-      //  mode: Phaser.Scale.LANDSCAPE,
      mode: Phaser.Scale.RESIZE,
-        // mode: Phaser.Scale.ScaleModes.WIDTH_CONTROLS_HEIGHT,
-// autoCenter: Phaser.Scale.CENTER_BOTH,
-        // autoCenter: Phaser.Scale.CENTER_VERTICALLY,
-         //  autoCenter: Phaser.Scale.CENTER_BOTH,
- // mode: Phaser.Scale.FIT, 
-   // mode: Phaser.Scale.ScaleModes.SHOW_ALL,
-         //mode: Phaser.Scale.RESIZE,
-        // autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   physics: {
     default: "matter",
