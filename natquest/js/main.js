@@ -35,6 +35,9 @@ const config = {
       debug: true,
     },
   },
+   //list all the scenes needed for the game, list them in the order theyre needed, with CompUI last
+  //all scenes don't need to be listed here, but they do need to either be listed here OR linked to from an existing scene that is here
+  //ie. you could list StartMenu in the list of scenes below and have NameSelect scene listed here too OR you could you just list StartMenu and in StartMenu scene link it directly to NameSelect
   scene: [
     Preloader,
     StartMenu,
