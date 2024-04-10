@@ -32,7 +32,9 @@ export default class OpenWorld extends Phaser.Scene {
 
 
      this.scene.remove('Preloader');
-    // this.scene.remove('StartMenu');
+    // this.scene.remove('StartMenu');  // currently have startMenu still active so the resize handler in it can be active.
+    //switch the resize handling to a scene that gets launched from OpenWorld so startmenu can be removed but resize will still have access to canvas
+    //then the resize handler can be launched from openworld with the other things
      this.scene.remove('Settings');
      this.scene.remove('NameSelect');
      this.scene.remove('CharSelect');
