@@ -1,6 +1,8 @@
 import { PlayerSprite } from '../PlayerSprite.js';
 import { sensorMapSet, createCollisionObjects } from '../collisionHandlers/mapSetter.js';
 import { sensorHandler } from '../collisionHandlers/openWorldCollisionHandler.js';
+import { NextScene } from './NextScene.js';
+
 
 export default class OpenWorld extends Phaser.Scene {
   constructor() {
@@ -27,6 +29,14 @@ export default class OpenWorld extends Phaser.Scene {
     this.world = this.matterEngine.create({
       // your Matter.js world options here
     });
+
+
+     this.scene.remove('Preloader');
+     this.scene.remove('StartMenu');
+     this.scene.remove('Settings');
+     this.scene.remove('NameSelect');
+     this.scene.remove('CharSelect');
+     this.scene.remove('WelcomePlayer');
     
     if (this.sys.game.device.os.android || this.sys.game.device.os.iOS) {
       this.scene.add('./MobileControls.js', MobileControls);
