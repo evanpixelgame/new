@@ -5,7 +5,8 @@
 // ex. GameManager.health -= 5; or GameManager.inventory.potions.healthpotionMax += 3; 
 // (in first ex if you lost 5 health or second ex if you bought 3 more potions)
 
-export class GameManager {
+//export class GameManager {
+class GameManager {
   constructor() {
     this.selectedCharacter = null;
     this.selectedCharacterIndex = null;
