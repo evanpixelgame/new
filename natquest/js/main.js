@@ -3,20 +3,20 @@
 //Scene order also matters to a degree, for example, GameUI is always listed as last scene
 //This makes sure GameUi is always the foremost item & not hidden beneath other elements
 
-import PlayerControls from './scenes/PlayerControls.js';
-import OpenWorld from  "./scenes/scenes/OpenWorld.js";
-import NewScene from './scenes/scenes/NewScene.js';
-import InsideRoom from './scenes/scenes/InsideRoom.js';
-import NextRoom from './scenes/scenes/NextRoom.js';
+//import PlayerControls from './scenes/PlayerControls.js';
+//import OpenWorld from  "./scenes/scenes/OpenWorld.js";
+//import NewScene from './scenes/scenes/NewScene.js';
+//import InsideRoom from './scenes/scenes/InsideRoom.js';
+//import NextRoom from './scenes/scenes/NextRoom.js';
     import { Preloader } from "./scenes/gameStartScenes/Preloader.js";
  //  import { StartMenu } from "./scenes/gameStartScenes/StartMenu.js";
-  import { Settings } from    "./scenes/gameStartScenes/Settings.js";
-   import { NameSelect } from    "./scenes/gameStartScenes/NameSelect.js";
-   import { CharSelect } from "./scenes/gameStartScenes/CharSelect.js";
-  import { WelcomePlayer } from  "./scenes/gameStartScenes/WelcomePlayer.js";
-   import { MobileControls } from "./scenes/MobileControls.js";
-   import { GameUI } from    "./scenes/GameUI.js";
-   import { PlayerAnimations } from "./scenes/PlayerAnimations.js";
+//  import { Settings } from    "./scenes/gameStartScenes/Settings.js";
+ //  import { NameSelect } from    "./scenes/gameStartScenes/NameSelect.js";
+//   import { CharSelect } from "./scenes/gameStartScenes/CharSelect.js";
+//  import { WelcomePlayer } from  "./scenes/gameStartScenes/WelcomePlayer.js";
+//   import { MobileControls } from "./scenes/MobileControls.js";
+//   import { GameUI } from    "./scenes/GameUI.js";
+//   import { PlayerAnimations } from "./scenes/PlayerAnimations.js";
 
 //set the width and height of the canvas equal the width and height of the screen it's being played on
 const width = window.innerWidth;
