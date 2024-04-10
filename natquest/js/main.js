@@ -9,7 +9,7 @@
 //OpenWorld for example is listed in the index.html so it doesn't need to be imported here
 
 import PlayerControls from './scenes/PlayerControls.js';
-import NewScene from './scenes/scenes/NewScene.js'; 
+import NewScene from './scenes/scenes/NewScene.js';
 import InsideRoom from './scenes/scenes/InsideRoom.js';
 import NextRoom from './scenes/scenes/NextRoom.js';
 
@@ -26,7 +26,7 @@ const config = {
   parent: 'game-container',
   pixelArt: true,
   scale: {
-     mode: Phaser.Scale.RESIZE, //this just makes it so that the game canvas always tries to automatically adjust so that it fills the available screen
+    mode: Phaser.Scale.RESIZE, //this just makes it so that the game canvas always tries to automatically adjust so that it fills the available screen
   },
   physics: {
     default: "matter", //this sets the physics engine to use matter.js instead of arcade physics
@@ -35,7 +35,7 @@ const config = {
       debug: true,
     },
   },
-   //list all the scenes needed for the game, list them in the order theyre needed, with CompUI last
+  //list all the scenes needed for the game, list them in the order theyre needed, with CompUI last
   //all scenes don't need to be listed here, but they do need to either be listed here OR linked to from an existing scene that is here
   //ie. you could list StartMenu in the list of scenes below and have NameSelect scene listed here too OR you could you just list StartMenu and in StartMenu scene link it directly to NameSelect
   scene: [
@@ -54,7 +54,7 @@ const config = {
     NextRoom,
     CompUI,
   ],
-   interpolation: true,
+  interpolation: true,
 };
 
 const game = new Phaser.Game(config);
