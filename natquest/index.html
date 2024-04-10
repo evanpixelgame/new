@@ -1,0 +1,56 @@
+<!-- TO VIEW GO TO: https://evanpixelgame.github.io/games/natquest/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Protest+Riot&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>NatQuest</title>
+  
+<!--UNCOMMENT TO ADD BACKGROUND IMG <body style="background-image: url('assets/backgrounds/bodyBackground2.jpg');> -->
+    <body>
+    <div id="background">
+    <div id="game-container"></div>
+    </div>
+      <div id="version"></div>
+      <div id="inputContainer">
+    <input type="text" id="nameInput" placeholder="Your name" style="display: none;">
+    <button id="confirmButton" style="display: none;">Confirm</button>
+      </div>
+   <!--   <div id="keyboardContainer" style="display: none;"></div> -->
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.0/dist/phaser.min.js"></script> --> 
+      <script src="https://cdn.jsdelivr.net/npm/phaser@latest/dist/phaser.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/matter-js@latest/build/matter.js"></script>
+        <!-- <script src="assets/bundles/bundle.min.js" type="module"></script> -->
+         <script src="assets/plugins/rex-virtual-joystick-plugin.js" type="module"></script>
+    <script src="js/gameState.js"></script> 
+    <script src="js/scenes/gameStartScenes/Preloader.js" type="module"></script>
+    <script src="js/scenes/gameStartScenes/StartMenu.js" type="module"></script>
+      <script src="js/scenes/gameStartScenes/Settings.js" type="module"></script>
+       <script src="js/scenes/gameStartScenes/NameSelect.js" type="module"></script>
+    <script src="js/scenes/gameStartScenes/CharSelect.js" type="module"></script>
+    <script src="js/scenes/gameStartScenes/WelcomePlayer.js" type="module"></script>
+        <script src="js/scenes/Player.js" type="module"></script>
+    <script src="js/scenes/OpenWorld.js" type="module"></script>
+    <script src="js/scenes/ComputerControls.js" type="module"></script>
+      <script src="js/scenes/PlayerControls.js" type="module"></script>
+    <script src="js/scenes/MobileControls.js" type="module"></script>
+       <script src="js/scenes/CompUI.js" type="module"></script>
+    <script src="js/scenes/PlayerAnimations.js" type="module"></script>
+      <script src="js/scenes/InsideRoom.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

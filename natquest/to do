@@ -1,0 +1,31 @@
+
+add little subtexts saying what each of the icons is above or below the icons, also add scrollover propertiers?
+
+start off every scene with attempt to launch it in fullscreen mode (and possibly also landscape perspective),
+especially start Open World scene in fullscreen mode, have the option to turn off auto fullscreen mode in settings
+
+have option to switch between joystick and d-pad, possibly switch off diagonal movement see how stardew does it
+
+consolidate all of the preload stuff into the preload scene (maybe except the sprite since that can wait after character selection so
+  unceessary extra ones arent added
+
+also spruce up the preload page so it looks more presentable since the preload time will only get longer
+
+fix the opening scenes so that the configuration is all right on them and they all appear nicely in screen
+
+fix the animation so that theres no animation if theyre not moving, or switch in idle or stop animation, also fix something with how it goes diagonal, should i make it so that for movement you can
+only for in up down left or right or should i leave diagonal as an option but just slow down the speed and add some animation? see how other games handle it, recheck out stardew
+
+in open world, try and separate out the animation logic into a separate scene like with mobile controls that then gets launched in open world
+
+maybe also maybe a desktop UI scene where all the desktop versions of controls, inventory, other on screen interactable information goes
+
+figure out how to add collision barriers
+
+figure out how to do scene transitions
+
+maybe start off the sprite in a very small map of a cabin or something, then have them move to the open world map
+
+set up all the collision events
+
+ figure out how to set up layers so that it looks nice like it should

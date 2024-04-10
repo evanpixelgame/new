@@ -1,0 +1,31 @@
+html, body, #game-container {
+   background-color: pink;
+   overflow: hidden;
+}
+
+#game-container {
+        min-width: 100%;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+/* *****************************************VIRTUAL KEYBOARD BUTTONS ************************************************* */
+.keyboard-button {
+    background-color: pink;
+    color: #a3a4d2;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 1px;
+    cursor: pointer;
+   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#keyboard-button-space {
+    width: 100px; 
+}
+
+#keyboard-button-backspace {
+    width: 100px;
+}
