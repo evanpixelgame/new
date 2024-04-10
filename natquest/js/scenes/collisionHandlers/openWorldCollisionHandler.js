@@ -11,46 +11,46 @@
 //^^maybe keep the main logic for the sensor handling here and then have the individual sensorhandler file for each scene just handle the different switch cases
 
 export function sensorHandler(scene, map, player, transitionSensors) {
-    
-    player.scene.matter.world.on('collisionstart', (eventData) => {
-        // Loop through pairs of colliding bodies
-        eventData.pairs.forEach(pair => {
-            // Check if the player is one of the bodies involved in the collision
-            if (pair.bodyA === player.body || pair.bodyB === player.body) {
-                // Get the other body involved in the collision
-                const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
-              // const isCustom = otherBody.properties.find(prop => prop.name === 'customID') !== undefined;
-               const isCustom = otherBody.isSensor == true;
-          
-                if (isCustom) {            
-    switch (otherBody.customID) {
-            
-        case 'OpenWorldToInsideRoom':
-            console.log('You hit a transition sensor!');
-            // Perform actions specific to this sensor
-            console.log('youve hit the sensor by the door');
-            //scene.scene.remove('ComputerControls');
-            scene.scene.start('NewScene', {
+
+  player.scene.matter.world.on('collisionstart', (eventData) => {
+    // Loop through pairs of colliding bodies
+    eventData.pairs.forEach(pair => {
+      // Check if the player is one of the bodies involved in the collision
+      if (pair.bodyA === player.body || pair.bodyB === player.body) {
+        // Get the other body involved in the collision
+        const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
+        // const isCustom = otherBody.properties.find(prop => prop.name === 'customID') !== undefined;
+        const isCustom = otherBody.isSensor == true;
+
+        if (isCustom) {
+          switch (otherBody.customID) {
+
+            case 'OpenWorldToInsideRoom':
+              console.log('You hit a transition sensor!');
+              // Perform actions specific to this sensor
+              console.log('youve hit the sensor by the door');
+              //scene.scene.remove('ComputerControls');
+              scene.scene.start('NewScene', {
                 player: scene.player,
                 speed: scene.speed,
                 camera: scene.cameras.main,
                 controls: scene.controls, // Passing the controls object here
                 engine: scene.matter.world,
                 world: scene.world,
-            });
-            break;
-            
-            case 'fastZone':
-                console.log('cue sirens, double speed');
-         //   scene.speed /= 2;
-            //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
-   Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
-            break;
+              });
+              break;
 
-              case 'BackToOpenWorld':
-            console.log('take me back home daddy');
-            const newPosition = { x: 560, y: 715 };
-             scene.scene.start('OpenWorld', {
+            case 'fastZone':
+              console.log('cue sirens, double speed');
+              //   scene.speed /= 2;
+              //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
+              Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
+              break;
+
+            case 'BackToOpenWorld':
+              console.log('take me back home daddy');
+              const newPosition = { x: 560, y: 715 };
+              scene.scene.start('OpenWorld', {
                 player: scene.player,
                 speed: scene.speed,
                 camera: scene.cameras.main,
@@ -58,35 +58,35 @@ export function sensorHandler(scene, map, player, transitionSensors) {
                 engine: scene.matter.world,
                 world: scene.world,
                 newPosition: newPosition,
-            });
-            break;
+              });
+              break;
 
-            
-              case 'InsideRoomToNextRoom':
-            console.log('take me back home again daddy');
-         //   const newPosition = { x: 560, y: 715 };
-            //  scene.scene.remove('ComputerControls');
-             scene.scene.start('NextRoom', {
+
+            case 'InsideRoomToNextRoom':
+              console.log('take me back home again daddy');
+              //   const newPosition = { x: 560, y: 715 };
+              //  scene.scene.remove('ComputerControls');
+              scene.scene.start('NextRoom', {
                 player: scene.player,
                 speed: scene.speed,
-           //     camera: scene.cameras.main,
+                //     camera: scene.cameras.main,
                 controls: scene.controls, // Passing the controls object here
-              //  engine: scene.matter.world,
-            //    world: scene.world,
+                //  engine: scene.matter.world,
+                //    world: scene.world,
                 //newPosition: newPosition,
-            });
-            break;
-            
-        // Add more cases for other sensor names as needed
-        default:
-            console.log(otherBody.customID);
-            // Handle other sensor names
-            break;
-    }
-} else {
-    console.log('Collision detected with non-sensor object ID:', otherBody.id);
-}
-            }
-        });
+              });
+              break;
+
+            // Add more cases for other sensor names as needed
+            default:
+              console.log(otherBody.customID);
+              // Handle other sensor names
+              break;
+          }
+        } else {
+          console.log('Collision detected with non-sensor object ID:', otherBody.id);
+        }
+      }
     });
+  });
 }
