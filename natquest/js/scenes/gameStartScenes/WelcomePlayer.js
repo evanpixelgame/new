@@ -66,6 +66,7 @@ export class WelcomePlayer extends Phaser.Scene {
       // Check if the device is in landscape mode
       if (orientation.includes('landscape')) {
         // Execute event handler code only in landscape mode
+        this.scene.add('OpenWorld', OpenWorld);
         this.scene.start('OpenWorld');
         console.log('Click event in landscape mode2');
       } else {
