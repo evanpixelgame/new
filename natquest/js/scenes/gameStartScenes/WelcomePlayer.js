@@ -1,6 +1,6 @@
 //import { gameManager } from '../../gameState.js';
 
-class WelcomePlayer extends Phaser.Scene {
+export class WelcomePlayer extends Phaser.Scene {
   constructor() {
     super({ key: 'WelcomePlayer' });
   }
