@@ -1,6 +1,6 @@
-import { PlayerSprite } from './PlayerSprite.js';
-import { sensorMapSet, createCollisionObjects } from './mapSetter.js';
-import { sensorHandler } from './collisionHandler.js';
+import { PlayerSprite } from '../PlayerSprite.js';
+import { sensorMapSet, createCollisionObjects } from '../collisionHandlers/mapSetter.js';
+import { sensorHandler } from '../collisionHandlers/collisionHandler.js';
 
 export default class NextRoom extends Phaser.Scene {
   constructor() {
