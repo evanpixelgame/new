@@ -58,9 +58,9 @@ export default class OpenWorld extends Phaser.Scene {
 
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
     console.log(this.player);
-    
+
     this.scene.launch('PlayerControls', { player: this.player });
-    
+
     // Set world bounds for the player
     const boundaryOffset = 2; // increase value to decrease how close player can get to map edge
     const worldBounds = new Phaser.Geom.Rectangle(
@@ -91,6 +91,6 @@ export default class OpenWorld extends Phaser.Scene {
     let velY = this.player.body.velocity.y;
     //console.log(posX, posY, velX, velY);
   }
-  
+
 }
 window.OpenWorld = OpenWorld;
