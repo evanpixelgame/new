@@ -111,7 +111,7 @@ export class StartMenu extends Phaser.Scene {
       console.log('Click event in landscape mode');
       window.removeEventListener('orientationchange', this.handleResizeOnReorientation);
       //  this.lockScreenOrientation();
-       this.scene.start('WelcomePlayer', WelcomePlayer);
+       this.scene.add('WelcomePlayer', WelcomePlayer);
       this.scene.start('WelcomePlayer');
       // Transition to the main scene when the button is clicked
     }, this);
