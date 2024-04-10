@@ -74,6 +74,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.player = new PlayerSprite(this, 495, 325, 'player'); // Create the player object, just took away this.world as 2nd argument
     console.log(this.player);
 
+    this.scene.add('./PlayerControls.js', PlayerControls);
     this.scene.launch('PlayerControls', { player: this.player });
 
     // Set world bounds for the player
