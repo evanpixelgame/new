@@ -29,11 +29,11 @@ export default class NewScene extends Phaser.Scene {
     this.world = this.scene.get('OpenWorld').world;
 
     // Get the reference to the already launched CompUI scene
-    const compUIScene = this.scene.get('GameUI');
+    const gameUIScene = this.scene.get('GameUI');
 
     // If the CompUI scene exists, update its gameScene property
-    if (compUIScene) {
-      compUIScene.gameScene = this;
+    if (gameUIScene) {
+      gameUIScene.gameScene = this;
     }
 
     // Create the map
