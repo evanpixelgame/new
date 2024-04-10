@@ -9,7 +9,7 @@
 //maybe split up the sensor handling if the switch cases start to get excessive, maybe each scene can get their own sensorhandler if it starts getting excession
 //^^and then this file could just for senor and collision object creation, and then each scene would get its own collision handler function.
 //^^maybe keep the main logic for the sensor handling here and then have the individual sensorhandler file for each scene just handle the different switch cases
-
+import NewScene from '../scenes/NewScene.js';
 export function sensorHandler(scene, map, player, transitionSensors) {
 
   player.scene.matter.world.on('collisionstart', (eventData) => {
@@ -30,6 +30,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               // Perform actions specific to this sensor
               console.log('youve hit the sensor by the door');
               //scene.scene.remove('ComputerControls');
+              scene.scene.add('NewScene', NewScene);
               scene.scene.start('NewScene', {
                 player: scene.player,
                 speed: scene.speed,
@@ -66,6 +67,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               console.log('take me back home again daddy');
               //   const newPosition = { x: 560, y: 715 };
               //  scene.scene.remove('ComputerControls');
+             // scene.scene.add('NextRoom', NextRoom);
               scene.scene.start('NextRoom', {
                 player: scene.player,
                 speed: scene.speed,
