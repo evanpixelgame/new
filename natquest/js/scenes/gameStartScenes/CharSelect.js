@@ -1,5 +1,5 @@
 //import { gameManager } from '../../gameState.js';
-class CharSelect extends Phaser.Scene {
+export class CharSelect extends Phaser.Scene {
   constructor() {
     super({ key: 'CharSelect' });
     this.selectedCharacter = null;
