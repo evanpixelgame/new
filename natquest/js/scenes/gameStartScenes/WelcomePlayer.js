@@ -1,4 +1,4 @@
-import { gameManager } from '../../gameState.js';
+//import { gameManager } from '../../gameState.js';
 
 class WelcomePlayer extends Phaser.Scene {
   constructor() {
