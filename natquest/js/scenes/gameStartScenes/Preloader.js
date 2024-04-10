@@ -1,3 +1,5 @@
+import { StartMenu } from "./scenes/gameStartScenes/StartMenu.js";
+
 export class Preloader extends Phaser.Scene {
   constructor() {
     super({ key: 'Preloader' });
