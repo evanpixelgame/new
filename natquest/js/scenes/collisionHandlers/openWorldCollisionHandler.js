@@ -9,6 +9,7 @@
 //^^and then this file could just for senor and collision object creation, and then each scene would get its own collision handler function.
 //^^maybe keep the main logic for the sensor handling here and then have the individual sensorhandler file for each scene just handle the different switch cases
 import NewScene from '../scenes/NewScene.js';
+import OpenWorld from '../scenes/OpenWorld.js';
 
 export function sensorHandler(scene, map, player, transitionSensors) {
 
