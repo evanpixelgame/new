@@ -32,7 +32,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
              let sceneAlreadyStarted = false;
             //set the player position in OpenWorld to a position not touching sensor before pausing and switching scenes
               scene.player.x = 560;
-              scene.scene.get('OpenWorld').player.y = 800;
+              scene.player.y = 800;
+              //this.scene.get('OpenWorld').player.y = 800;
               scene.scene.pause('OpenWorld');
               scene.scene.add('NewScene', NewScene);
               scene.scene.start('NewScene', {
