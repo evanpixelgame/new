@@ -65,9 +65,12 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             case 'BackToOpenWorld':
        console.log('take me back home daddy');
        scene.scene.pause('NewScene');
+      scene.scene.stop('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
-       scene.scene.bringToTop('OpenWorld'); 
-       scene.scene.bringToTop('PlayerControls');        
+       scene.scene.bringToTop('OpenWorld');
+       scene.scene.launch('PlayerControls', { player: this.player });
+    //   scene.scene.resume('PlayerCpmtrols');
+      // scene.scene.bringToTop('PlayerControls');        
               //probably shouldnt need to bring to top, maybe bring controls on top after
               //also see whats the fewest things i need to pass in order to make it work, can pass anything else pertinent after
               //probably need to pass engine and world to preserve world state
