@@ -16,6 +16,7 @@
 
 import NewScene from '../scenes/NewScene.js';
 import OpenWorld from '../scenes/OpenWorld.js';
+import PlayerControls from '../PlayerControls.js';
 
 export function sensorHandler(scene, map, player, transitionSensors) {
 
