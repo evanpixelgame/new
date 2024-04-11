@@ -103,6 +103,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.cameras.main.setZoom(2);
 
 this.events.on('resume', (scene, data) => {
+  console.log('event listenerinopenworld for resume');
   // Check if the resume data contains information about the source scene
   if (data && data.sourceScene) {
     // Check the source scene
