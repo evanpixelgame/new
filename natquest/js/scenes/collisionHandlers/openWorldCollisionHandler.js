@@ -25,18 +25,18 @@ export function sensorHandler(scene, map, player, transitionSensors) {
 
         if (isCustom) {
           switch (otherBody.customID) {
-
+          console.log('You hit a transition sensor!');
+              
            case 'OpenWorldToInsideRoom':
-    console.log('You hit a transition sensor!');
-    // Perform actions specific to this sensor
-    console.log('youve hit the sensor by the door the first time');
-    
     // Check if 'NewScene' is already active
     const newScene = scene.scene.get('NewScene');
-    if (newScene && newScene.isActive()) {
+    if (sceneLaunched == true) {
+      console.log('You hit the door sensor again!');
         // If 'NewScene' is already active, resume it
+        scene.scene.pause('OpenWorld');
         scene.scene.resume('NewScene');
     } else {
+      console.log('youve hit the door sensor for the first time');
         // If 'NewScene' is not active, launch it
         scene.scene.pause('OpenWorld');
       //   scene.player.setPosition(560, 800);
