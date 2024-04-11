@@ -101,6 +101,16 @@ export default class OpenWorld extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
+
+    //make it so that if the scene is resume, it resume from newposition 
+        this.events.on('resume', () => {
+        if (this.playerNewPosition) {
+            this.player.setPosition(this.playerNewPosition.x, this.playerNewPosition.y);
+            this.playerNewPosition = null; // Reset position after setting it
+        }
+    });
+
+    
   }
 
   update(time, delta) {
