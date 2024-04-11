@@ -33,10 +33,11 @@ export function sensorHandler(scene, map, player, transitionSensors) {
              let sceneAlreadyStarted = false;
             //set the player position in OpenWorld to a position not touching sensor before pausing and switching scenes
              console.log('TITI is beautiful player position before' + scene.player.x + 'and' + scene.player.y );
-              scene.player.x = 560;
-              scene.player.y = 800;
+            //  scene.player.x = 560;
+             // scene.player.y = 800;
               console.log('TITI is beautiful player position after' + scene.player.x + 'and' + scene.player.y );
               //this.scene.get('OpenWorld').player.y = 800;
+             scene.player.setPosition(560, 800);
               scene.scene.pause('OpenWorld');
               scene.scene.add('NewScene', NewScene);
               scene.scene.launch('NewScene', {
