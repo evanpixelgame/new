@@ -30,7 +30,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               // Perform actions specific to this sensor
               console.log('youve hit the sensor by the door the first time');
              let sceneAlreadyStarted = false;
-              //scene.scene.remove('ComputerControls');
+            //set the player position in OpenWorld to a position not touching sensor before pausing and switching scenes
               this.scene.get('OpenWorld').player.x = 560;
               this.scene.get('OpenWorld').player.y = 800;
               scene.scene.pause('OpenWorld');
