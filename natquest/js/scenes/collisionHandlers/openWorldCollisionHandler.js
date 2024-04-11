@@ -43,7 +43,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
     } else {
       console.log('youve hit the door sensor for the first time');
       console.log('x position: ' + scene.player.x + '  y position: ' + scene.player.y);
-      scene.player.setPosition(560. 800);
+      scene.player.setPosition(560, 800);
       console.log('x position: ' + scene.player.x + '  y position: ' + scene.player.y);
         // If 'NewScene' is not active, launch it
         scene.scene.pause('OpenWorld');
@@ -64,7 +64,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
        console.log('take me back home daddy');
        scene.scene.pause('NewScene');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
-      // scene.scene.bringToTop('OpenWorld');
+     //  scene.scene.bringToTop('OpenWorld');  //probably shouldnt need to bring to top, maybe bring controls on top after
               break;
               
 
