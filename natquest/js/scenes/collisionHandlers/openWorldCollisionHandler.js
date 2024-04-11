@@ -26,29 +26,30 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         if (isCustom) {
           switch (otherBody.customID) {
 
-            case 'OpenWorldToInsideRoom':
-              console.log('You hit a transition sensor!');
-              // Perform actions specific to this sensor
-              console.log('youve hit the sensor by the door the first time');
-             let sceneAlreadyStarted = false;
-            //set the player position in OpenWorld to a position not touching sensor before pausing and switching scenes
-             console.log('TITI is beautiful player position before' + scene.player.x + 'and' + scene.player.y );
-            //  scene.player.x = 560;
-             // scene.player.y = 800;
-              console.log('TITI is beautiful player position after' + scene.player.x + 'and' + scene.player.y );
-              //this.scene.get('OpenWorld').player.y = 800;
-             scene.player.setPosition(560, 800);
-              scene.scene.pause('OpenWorld');
-              scene.scene.add('NewScene', NewScene);
-              scene.scene.launch('NewScene', {
-                player: scene.player,
-                speed: scene.speed,
-                camera: scene.cameras.main,
-                controls: scene.controls, // Passing the controls object here
-                engine: scene.matter.world,
-                world: scene.world,
-              });
-              break;
+           case 'OpenWorldToInsideRoom':
+    console.log('You hit a transition sensor!');
+    // Perform actions specific to this sensor
+    console.log('youve hit the sensor by the door the first time');
+    
+    // Check if 'NewScene' is already active
+    const newScene = scene.scene.get('NewScene');
+    if (newScene && newScene.isActive()) {
+        // If 'NewScene' is already active, resume it
+        scene.scene.resume('NewScene');
+    } else {
+        // If 'NewScene' is not active, launch it
+        scene.scene.pause('OpenWorld');
+        scene.scene.launch('NewScene', {
+            player: scene.player,
+            speed: scene.speed,
+            camera: scene.cameras.main,
+            controls: scene.controls, // Passing the controls object here
+            engine: scene.matter.world,
+            world: scene.world,
+        });
+    }
+    break;
+
 
             case 'fastZone':
               console.log('cue sirens, double speed');
