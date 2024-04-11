@@ -61,7 +61,7 @@ export default class NewScene extends Phaser.Scene {
     console.log(this.player);
     this.player.setScale(1);
 
-    this.scene.resume('PlayerControls', { player: this.player });
+    this.scene.launch('PlayerControls', { player: this.player });
 
 
     // Set world bounds for the player
