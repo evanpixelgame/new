@@ -102,6 +102,32 @@ export default class OpenWorld extends Phaser.Scene {
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
+this.events.on('resume', (scene, data) => {
+  // Check if the resume data contains information about the source scene
+  if (data && data.sourceScene) {
+    // Check the source scene
+    switch (data.sourceScene) {
+      case 'NewScene':
+        // Resume from InsideHouse scene
+        // Adjust player position or perform other actions specific to this scenario
+        if (this.player) {
+          // Set the player position to a specific location for when resuming from InsideHouse
+          this.player.setPosition(560, 800);
+        }
+        break;
+      default:
+        // Resume from other scenes (if needed)
+        console.log('attempt');
+        // You can add additional cases for different source scenes if necessary
+        break;
+    }
+  } else {
+    // Resume from unknown source or no additional data provided
+    // Default behavior (if any) can go here
+    console.log('whoopsies else case');
+  }
+});
+    
   }
 
   update(time, delta) {
