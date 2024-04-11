@@ -39,7 +39,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               //this.scene.get('OpenWorld').player.y = 800;
               scene.scene.pause('OpenWorld');
               scene.scene.add('NewScene', NewScene);
-              scene.scene.start('NewScene', {
+              scene.scene.launch('NewScene', {
                 player: scene.player,
                 speed: scene.speed,
                 camera: scene.cameras.main,
