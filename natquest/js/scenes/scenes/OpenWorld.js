@@ -104,12 +104,14 @@ export default class OpenWorld extends Phaser.Scene {
   }
 
   update(time, delta) {
+   /*
     // Get player's position and velocity
     let posX = this.player.body.position.x;
     let posY = this.player.body.position.y;
     let velX = this.player.body.velocity.x;
     let velY = this.player.body.velocity.y;
     //console.log(posX, posY, velX, velY);
+    */
   }
 
 }
