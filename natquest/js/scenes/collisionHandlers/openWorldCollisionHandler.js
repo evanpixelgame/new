@@ -58,7 +58,15 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             case 'BackToOpenWorld':
               console.log('take me back home daddy');
      //   scene.scene.pause('NewScene'); // Stop or pause, depending on your needs
-        scene.scene.resume('OpenWorld');
+        scene.scene.resume('OpenWorld', {
+                player: scene.player,
+                speed: scene.speed,
+                camera: scene.cameras.main,
+                controls: scene.controls, // Passing the controls object here
+                engine: scene.matter.world,
+                world: scene.world,
+              //newPosition: newPosition,
+              });
         scene.scene.pause('NewScene');
               break;
 
