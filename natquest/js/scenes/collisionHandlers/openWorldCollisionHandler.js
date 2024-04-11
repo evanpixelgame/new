@@ -31,8 +31,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               console.log('youve hit the sensor by the door the first time');
              let sceneAlreadyStarted = false;
             //set the player position in OpenWorld to a position not touching sensor before pausing and switching scenes
-              this.scene.get('OpenWorld').player.x = 560;
-              this.scene.get('OpenWorld').player.y = 800;
+              scene.player.x = 560;
+              scene.scene.get('OpenWorld').player.y = 800;
               scene.scene.pause('OpenWorld');
               scene.scene.add('NewScene', NewScene);
               scene.scene.start('NewScene', {
@@ -54,14 +54,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
 
             case 'BackToOpenWorld':
               console.log('take me back home daddy');
-     let newPosition = { x: 560, y: 700 }; // Example new position outside the house
-    let openWorldScene = scene.scene.get('OpenWorld');
-    
-    if (openWorldScene) {
-        openWorldScene.playerNewPosition = newPosition; // Directly set a property
         scene.scene.pause('NewScene'); // Stop or pause, depending on your needs
         scene.scene.resume('OpenWorld');
-    }
               break;
 
 
