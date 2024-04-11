@@ -25,7 +25,6 @@ export function sensorHandler(scene, map, player, transitionSensors) {
 
         if (isCustom) {
           switch (otherBody.customID) {
-          console.log('You hit a transition sensor!');
               
            case 'OpenWorldToInsideRoom':
     // Check if 'NewScene' is already active
