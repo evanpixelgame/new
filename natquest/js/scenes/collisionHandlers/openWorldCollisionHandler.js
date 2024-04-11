@@ -35,7 +35,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
            case 'OpenWorldToInsideRoom':
     // Check if 'NewScene' is already active
     const newScene = scene.scene.get('NewScene');
-    if (sceneLaunched == true) {
+    if (scene.NewSceneLaunched == true) {
       console.log('You hit the door sensor again!');
         // If 'NewScene' is already active, resume it
         scene.scene.pause('OpenWorld');
