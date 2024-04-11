@@ -64,6 +64,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               
             case 'BackToOpenWorld':
        console.log('take me back home daddy');
+        scene.player.setPosition(650, 770);
        scene.scene.pause('NewScene');
       scene.scene.remove('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
