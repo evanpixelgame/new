@@ -62,7 +62,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
       // this.scene.get('OpenWorld').player.y = 800;
               
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
-              scene.player.setPosition(500, 800);
+             // scene.player.setPosition(500, 800);
           /*    scene.scene.resume('OpenWorld', {
                 player: scene.player,
                 speed: scene.speed,
