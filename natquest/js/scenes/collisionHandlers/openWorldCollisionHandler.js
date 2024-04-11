@@ -61,7 +61,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
        scene.scene.pause('NewScene'); // Stop or pause, depending on your needs
       // this.scene.get('OpenWorld').player.y = 800;
               
-       scene.scene.resume('OpenWorld');
+       this.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
               scene.player.setPosition(500, 800);
           /*    scene.scene.resume('OpenWorld', {
                 player: scene.player,
