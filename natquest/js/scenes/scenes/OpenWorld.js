@@ -109,6 +109,7 @@ this.events.on('resume', (scene, data) => {
     // Check the source scene
     switch (data.sourceScene) {
       case 'NewScene':
+           this.scene.pause('NewScene');
         // Resume from InsideHouse scene
         // Adjust player position or perform other actions specific to this scenario
         if (this.player) {
