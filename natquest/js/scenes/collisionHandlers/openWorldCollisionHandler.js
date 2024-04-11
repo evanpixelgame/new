@@ -64,7 +64,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
        console.log('take me back home daddy');
        scene.scene.pause('NewScene');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
-       scene.scene.bringToTop('OpenWorld');
+      // scene.scene.bringToTop('OpenWorld');
               break;
               
 
