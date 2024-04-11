@@ -39,6 +39,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
     } else {
         // If 'NewScene' is not active, launch it
         scene.scene.pause('OpenWorld');
+      //   scene.player.setPosition(560, 800);
+       scene.scene.add('NewScene', NewScene);
         scene.scene.launch('NewScene', {
             player: scene.player,
             speed: scene.speed,
