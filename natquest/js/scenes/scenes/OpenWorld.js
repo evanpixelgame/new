@@ -102,6 +102,7 @@ export default class OpenWorld extends Phaser.Scene {
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
     this.cameras.main.setZoom(2);
 
+    /*
 this.events.on('resume', (scene, data) => {
   console.log('event listenerinopenworld for resume');
   // Check if the resume data contains information about the source scene
@@ -129,6 +130,7 @@ this.events.on('resume', (scene, data) => {
     console.log('whoopsies else case');
   }
 });
+    */
     
   }
 
