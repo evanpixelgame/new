@@ -42,7 +42,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         scene.scene.resume('NewScene');
     } else {
       console.log('youve hit the door sensor for the first time');
-      console.log('x position: ' + scene.player.x + '  y position: ' scene.player.y);
+      console.log('x position: ' + scene.player.x + '  y position: ' + scene.player.y);
       scene.player.setPosition(560. 800);
       console.log('x position: ' + scene.player.x + '  y position: ' scene.player.y);
         // If 'NewScene' is not active, launch it
