@@ -31,6 +31,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               console.log('youve hit the sensor by the door the first time');
              let sceneAlreadyStarted = false;
               //scene.scene.remove('ComputerControls');
+              this.scene.get('OpenWorld').player.x = 560;
+              this.scene.get('OpenWorld').player.y = 800;
               scene.scene.pause('OpenWorld');
               scene.scene.add('NewScene', NewScene);
               scene.scene.start('NewScene', {
