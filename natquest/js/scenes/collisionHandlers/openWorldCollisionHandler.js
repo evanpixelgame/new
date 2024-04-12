@@ -1,3 +1,8 @@
+    //  customID: customID,
+    //  customCollisionID: customCollisionID,
+    //  customOverlapID: customOverlapID,
+//  ^^^^ current options for IDs that hold ID values ie. customOverlapID: FastZone
+
 // TRY TO ADD A IF LOGIC TO IT SO THAT IT CAN USE OBJECT PROPERTIES TO DETERMINE WHETHER TO HANDLE THE SENSOR AS ON COLLISION OR OVERLAP
 //expirment with different ways to initiate the callback other than collisionStart and overlap, learn how to use overlap better
 //maybe split up the sensor handling if the switch cases start to get excessive, maybe each scene can get their own sensorhandler if it starts getting excession
