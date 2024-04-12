@@ -85,7 +85,7 @@ export default class NewScene extends Phaser.Scene {
 
                 this.events.on('resume', () => {
             console.log('NewScene has been resumed!');
-    this.scene.add('./PlayerControls.js', PlayerControls);
+ //   this.scene.add('./PlayerControls.js', PlayerControls);
     this.scene.launch('PlayerControls', { player: this.player });
         });
   }
