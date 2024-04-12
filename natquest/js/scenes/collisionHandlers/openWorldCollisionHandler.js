@@ -56,9 +56,9 @@ export function sensorHandler(scene, map, player, transitionSensors) {
        scene.scene.add('NewScene', NewScene);
         scene.scene.launch('NewScene', {
             player: scene.player,
-            speed: scene.speed,
-            camera: scene.cameras.main,
-            controls: scene.controls, // Passing the controls object here
+          //  speed: scene.speed,
+           // camera: scene.cameras.main,
+           // controls: scene.controls, // Passing the controls object here
             engine: scene.matter.world,
             world: scene.world,
         });
