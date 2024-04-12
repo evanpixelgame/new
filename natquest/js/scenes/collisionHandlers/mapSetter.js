@@ -1,3 +1,10 @@
+//Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
+//Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
+//Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
+//Also ensure their Object layer that deals with sensors is named "Sensor Layer 1" and when adding custom properties in Tiled editor
+//do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
+//^^^^update explanations when fully updated
+
 export function sensorMapSet(scene, map) {
   const sensorLayer1 = map.getObjectLayer('Sensor Layer 1');
 
