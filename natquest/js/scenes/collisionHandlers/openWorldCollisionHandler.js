@@ -23,6 +23,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
         // const isCustom = otherBody.properties.find(prop => prop.name === 'customID') !== undefined;
         const isCustom = otherBody.isSensor == true;
+        // const isCustomCollision //SWITCH TO THESE SO THAT IT CAN TAKE DIFFERENT TYPES OF SENSORS FOR DIFFERENT REACTIONS AND DO ANOTHER ONE FOR ON
+        // const isCustomOverlap  // OVERLAP AND SEE IF THERE ARE OTHER COLLISION EVENT LISTENER TYPES AND ACCOMODATE THEM
 
         if (isCustom) {
           switch (otherBody.customID) {
