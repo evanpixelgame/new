@@ -106,7 +106,7 @@ export default class OpenWorld extends Phaser.Scene {
 
             this.events.on('resume', () => {
             console.log('OpenWorld has been resumed!');
-    this.scene.add('./PlayerControls.js', PlayerControls);
+ //   this.scene.add('./PlayerControls.js', PlayerControls);
     this.scene.launch('PlayerControls', { player: this.player });
         });
     
