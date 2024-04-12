@@ -5,6 +5,21 @@
 //do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
 //^^^^update explanations when fully updated
 
+// In Tiled map editing software, make a new orthogonal map, choose to embed Tilesets
+// For sensor objects, create an object layer named 'Sensor Layer 1' and create your sensor object shapes
+// Click on properties of object shapes, click add properties
+// If the shape is for a sensor that works with on collision event, click on object and see expanded info
+// Add custom property to shape. Give the custom propety a name of customCollisionID
+// Then give customCollisionID a value of a descriptive, unique title ie. OpenWorldToInsideRoom
+// Sometimes the objects can have the same ID for the same effect
+// ie. multiple objects could have property name customCollisionID with a descriptive value, ex. 'TakeFiveDamage'
+// Now any tile with that label will do the same thing based on the handler switch case
+// If the sensor is supposed to activate based on an Overlap event
+// Then give it a custom property name of customOverlapID with a descriptive value, ex. 'IceTerrain' to affect friction during overlap
+// If the sensor is supposed to activate based on a Click event
+// Then give it a custom property name of customClickID with a descriptive value, ex. 'TalkToSadGhost' to initiate dialogue with NPC
+// custom property name options: customCollsionID, customOverlapID, customClickID
+
 export function sensorMapSet(scene, map) {
   const sensorLayer1 = map.getObjectLayer('Sensor Layer 1');
 
