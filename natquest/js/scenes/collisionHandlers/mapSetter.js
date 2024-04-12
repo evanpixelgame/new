@@ -1,17 +1,11 @@
-//Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
-//Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
-//Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
-//Also ensure their Object layer that deals with sensors is named "Sensor Layer 1" and when adding custom properties in Tiled editor
-//do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
-//^^^^update explanations when fully updated
-// ** READY TO DELETE ABOVE??
-
-
-// Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
+// Creates collision objects and sensor objects, and assigns the sensor objects a property name/value of their customID
+// The scene's collisionHandler will then use those IDs to make switch cases and the logic for them there
 // Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
 // Make sure that all imported maps have their Object layer that deals with colliding with barriers/walls is named "Collision Layer 1"
 // MKW sure all imported maps have their Object layer that deals with collisions with custom sensors is named "Sensor Layer 1"
 // Make sure all custom objects in the Tiled 'Sensor Layer 1' object layer have custom property name of customID
+// MKW sure all imported maps have their Object layer that deals with clicking with custom sensors is named "Click Layer 1"
+// Make sure all custom objects in the Tiled 'Click Layer 1' object layer have custom property name of customID
 // Make sure the values of the custom property names are descriptive and able to be used easily for switch cases
 
 // INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
@@ -58,7 +52,6 @@ export function sensorMapSet(scene, map) {
   });
 
 }
-
 
 
 export function createCollisionObjects(scene, map) {
