@@ -8,7 +8,7 @@
 
 // INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
 //******************************************************************************************
-// In Tiled map editing software, make a new orthogonal map, choose to embed Tilesets
+// In Tiled map editing software, make a new orthogonal map, choose to embed Tilesets, choose Tile size of 32x32, can change to 64x64 or other, but will need to adjust parameters for code parsing the json to construct map
 // For collision objects, create an object layer named 'Collision Layer 1' and create your collision object shapes
 // Collision objects on 'Collision Layer 1' do not need custom property names, as all objects on that layer are treated as collisions
 // For sensor objects, create an object layer named 'Sensor Layer 1' and create your sensor object shapes
