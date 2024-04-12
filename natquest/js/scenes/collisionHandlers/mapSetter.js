@@ -4,7 +4,6 @@
 
 // INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
 //******************************************************************************************
-
 // In Tiled map editing software, make a new orthogonal map, choose to embed Tilesets
 // For collision objects, create an object layer named 'Collision Layer 1' and create your collision object shapes
 // Collision objects on 'Collision Layer 1' do not need custom property names, as all objects on that layer are treated as collisions
