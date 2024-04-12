@@ -1,6 +1,7 @@
     //  customID: customID,
     //  customCollisionID: customCollisionID,
     //  customOverlapID: customOverlapID,
+    //  customClickID: customClickID,
 //  ^^^^ current options for IDs that hold ID values ie. customOverlapID: FastZone
 
 // TRY TO ADD A IF LOGIC TO IT SO THAT IT CAN USE OBJECT PROPERTIES TO DETERMINE WHETHER TO HANDLE THE SENSOR AS ON COLLISION OR OVERLAP
