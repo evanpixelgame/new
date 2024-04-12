@@ -1,9 +1,3 @@
-//Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
-//Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
-//Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
-//Also ensure their Object layer that deals with sensors is named "Sensor Layer 1" and when adding custom properties in Tiled editor, do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
-//^^^move this to the mapsetter instructions, also make mapsetter changes described in third comment block
-
 // TRY TO ADD A IF LOGIC TO IT SO THAT IT CAN USE OBJECT PROPERTIES TO DETERMINE WHETHER TO HANDLE THE SENSOR AS ON COLLISION OR OVERLAP
 //expirment with different ways to initiate the callback other than collisionStart and overlap, learn how to use overlap better
 //maybe split up the sensor handling if the switch cases start to get excessive, maybe each scene can get their own sensorhandler if it starts getting excession
