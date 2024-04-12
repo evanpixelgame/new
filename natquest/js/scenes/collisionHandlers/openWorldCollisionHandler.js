@@ -90,7 +90,10 @@ export function sensorHandler(scene, map, player, transitionSensors) {
       }
     });
   });
-
+  
+//****************************************************************************************************************************************
+//********************************COLLISION END SWITCH CASES******************************************************************************
+  
   player.scene.matter.world.on('collisionend', (eventData) => {
     eventData.pairs.forEach(pair => {
       if (pair.bodyA === player.body || pair.bodyB === player.body) {
@@ -102,13 +105,9 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               
             case 'fastZone':
               console.log('whee woo, collision overlap over, -2 speed');
-              //   scene.speed /= 2;
-              //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
-            //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
-                scene.player.velocityChange -= 2; 
+              scene.player.velocityChange -= 2; 
               break;
-
-
+              
             // Add more cases for other sensor names as needed
             default:
               console.log('Ended collision with ' + otherBody.customID);
