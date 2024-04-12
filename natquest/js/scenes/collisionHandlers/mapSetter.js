@@ -1,9 +1,17 @@
+//Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
+//Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
+//Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
+//Also ensure their Object layer that deals with sensors is named "Sensor Layer 1" and when adding custom properties in Tiled editor
+//do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
+//^^^^update explanations when fully updated
+// ** READY TO DELETE ABOVE??
+
+
 // Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
 // Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
 // Make sure that all imported maps have their Object layer that deals with colliding with barriers/walls is named "Collision Layer 1"
 // MKW sure all imported maps have their Object layer that deals with collisions with custom sensors is named "Sensor Layer 1"
-// Make sure all custom objects in the Tiled 'Sensor Layer 1' object layer have custom property names
-// Make sure those custom property names are either: customCollsionID, customOverlapID, customClickID
+// Make sure all custom objects in the Tiled 'Sensor Layer 1' object layer have custom property name of customID
 // Make sure the values of the custom property names are descriptive and able to be used easily for switch cases
 
 // INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
@@ -14,16 +22,15 @@
 // For sensor objects, create an object layer named 'Sensor Layer 1' and create your sensor object shapes
 // Click on properties of object shapes, click add properties
 // If the shape is for a sensor that works with on collision event, click on object and see expanded info
-// Add custom property to shape. Give the custom propety a name of customCollisionID
-// Then give customCollisionID a value of a descriptive, unique title ie. OpenWorldToInsideRoom
+// Add custom property to shape. Give the custom propety a name of customID
+// Then give customID a value of a descriptive, unique title ie. OpenWorldToInsideRoom
 // Sometimes the objects can have the same ID for the same effect
-// ie. multiple objects could have property name customCollisionID with a descriptive value, ex. 'TakeFiveDamage'
+// ie. multiple objects could have property name customID with a descriptive value, ex. 'TakeFiveDamage'
 // Now any tile with that label will do the same thing based on the handler switch case
-// If the sensor is supposed to activate based on an Overlap event
-// Then give it a custom property name of customOverlapID with a descriptive value, ex. 'IceTerrain' to affect friction during overlap
-// If the sensor is supposed to activate based on a Click event
-// Then give it a custom property name of customClickID with a descriptive value, ex. 'TalkToSadGhost' to initiate dialogue with NPC
-// custom property name options: customCollsionID, customOverlapID, customClickID
+// If the sensor is supposed to activate based on an Overlap event make sure to give it a collisionend case in addition to collisionstart case in the handler
+// By combining collision start code and then collision end code that undos the previous code makes it work like an overlap
+// ie. could use start and end collision on customID 'IceTerrain' to affect friction during overlap
+
 
 export function sensorMapSet(scene, map) {
   const sensorLayer1 = map.getObjectLayer('Sensor Layer 1');
@@ -34,24 +41,6 @@ export function sensorMapSet(scene, map) {
     const customID = customIDProperty ? customIDProperty.value : null;
     console.log('Object Custom IDfromhandler:', customID);
 
-    const customCollisionIDProperty = object.properties.find(prop => prop.name === 'customCollisionID');
-    const customCollisionID = customCollisionIDProperty ? customCollisionIDProperty.value : null;
-    if (customCollisionID) {
-    console.log('Object CustomCollision IDfromhandler:', customCollisionID);
-    }
-    
-    const customOverlapIDProperty = object.properties.find(prop => prop.name === 'customOverlapID');
-    const customOverlapID = customOverlapIDProperty ? customOverlapIDProperty.value : null;
-    if (customCollisionID) {
-    console.log('Object CustomOverlap IDfromhandler:', customOverlapID);
-    }
-
-    if (customCollisionID) {
-    const customClickIDProperty = object.properties.find(prop => prop.name === 'customClickID');
-    const customClickID = customClickIDProperty ? customClickIDProperty.value : null;
-    console.log('Object CustomClick IDfromhandler:', customClickID);
-    }
-      
     const centerX = object.x + object.width / 2;
     const centerY = object.y + object.height / 2;
     const width = object.width;
@@ -61,9 +50,6 @@ export function sensorMapSet(scene, map) {
     const sensor = scene.matter.add.rectangle(centerX, centerY, width, height, {
       isSensor: true, // Set to true to make it a sensor
       customID: customID,
-      customCollisionID: customCollisionID,
-      customOverlapID: customOverlapID,
-      customClickID: customClickID,
       render: {
         fillStyle: 'transparent', // Optional: make the sensor invisible
         strokeStyle: 'red' // Optional: set a stroke color for debugging
