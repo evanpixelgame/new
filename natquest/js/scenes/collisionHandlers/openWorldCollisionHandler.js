@@ -1,18 +1,5 @@
-    //  customID: customID,
-    //  customCollisionID: customCollisionID,
-    //  customOverlapID: customOverlapID,
-    //  customClickID: customClickID,
-//  ^^^^ current options for IDs that hold ID values ie. customOverlapID: FastZone
-
-// TRY TO ADD A IF LOGIC TO IT SO THAT IT CAN USE OBJECT PROPERTIES TO DETERMINE WHETHER TO HANDLE THE SENSOR AS ON COLLISION OR OVERLAP
-//expirment with different ways to initiate the callback other than collisionStart and overlap, learn how to use overlap better
-//maybe split up the sensor handling if the switch cases start to get excessive, maybe each scene can get their own sensorhandler if it starts getting excession
-//^^and then this file could just for senor and collision object creation, and then each scene would get its own collision handler function.
-//^^maybe keep the main logic for the sensor handling here and then have the individual sensorhandler file for each scene just handle the different switch cases
-
-//in the setter, add another property called overlapSensor and set that to true based on a similar customID principle used to set the customIDs
-//or maybe assign contact sensors a customID property that says that and overlap sensors a customID with overlap and set isOverlap from false to true
-//and set is oncontact false from true, and then do a if logic before the switch cases, so there will overlap switchs and contact switches
+// If a sensor is supposed to be more of an overlap property rather than just an on collision
+// Then make sure to give it a on collision end switch case that reverses the effect
 
 import NewScene from '../scenes/NewScene.js';
 import OpenWorld from '../scenes/OpenWorld.js';
@@ -33,9 +20,6 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         // const isCustomOverlap  // OVERLAP AND SEE IF THERE ARE OTHER COLLISION EVENT LISTENER TYPES AND ACCOMODATE THEM
 
         if (isCustom) {
-
-            console.log('TITISO PRETTY, otherbody.customID' + otherBody.customID || ' orCaseSuckas');
-            console.log('TITISO PRETTY, otherbody.customCollisionID' + otherBody.customCollisionID || ' orCaseSuckas');
           switch (otherBody.customID) {
               
            case 'OpenWorldToInsideRoom':
@@ -106,4 +90,36 @@ export function sensorHandler(scene, map, player, transitionSensors) {
       }
     });
   });
+
+  player.scene.matter.world.on('collisionend', (eventData) => {
+    eventData.pairs.forEach(pair => {
+      if (pair.bodyA === player.body || pair.bodyB === player.body) {
+        const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
+        const isCustom = otherBody.isSensor == true;
+          
+        if (isCustom) {
+          switch (otherBody.customID) {
+              
+            case 'fastZone':
+              console.log('cue sirens, double speed');
+              //   scene.speed /= 2;
+              //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
+            //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
+                scene.player.velocityChange -= 2; 
+              break;
+
+
+            // Add more cases for other sensor names as needed
+            default:
+              console.log('Ended collision with ' + otherBody.customID);
+              // Handle other sensor names
+              break;
+          }
+        } else {
+          console.log('Ended Collision detected with non-sensor object ID:', otherBody.id);
+        }
+      }
+    });
+  });
+    
 }
