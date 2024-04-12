@@ -1,11 +1,13 @@
 //Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
 //Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
 //Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
-//Also ensure their Object layer that deals with sensors is named "Sensor Layer 1" and when adding custom properties in Tiled editor
-//do "customID" for property and then give it a value of whatever label will coorelate with its caused effect 
-//^^^^update explanations when fully updated
+
+// INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
+//******************************************************************************************
 
 // In Tiled map editing software, make a new orthogonal map, choose to embed Tilesets
+// For collision objects, create an object layer named 'Collision Layer 1' and create your collision object shapes
+// Collision objects on 'Collision Layer 1' do not need custom property names, as all objects on that layer are treated as collisions
 // For sensor objects, create an object layer named 'Sensor Layer 1' and create your sensor object shapes
 // Click on properties of object shapes, click add properties
 // If the shape is for a sensor that works with on collision event, click on object and see expanded info
