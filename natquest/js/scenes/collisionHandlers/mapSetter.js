@@ -31,6 +31,8 @@ export function sensorMapSet(scene, map) {
     const sensor = scene.matter.add.rectangle(centerX, centerY, width, height, {
       isSensor: true, // Set to true to make it a sensor
       customID: customID,
+      customCollisionID: customCollisionID,
+      customOverlapID: customOverlapID,
       render: {
         fillStyle: 'transparent', // Optional: make the sensor invisible
         strokeStyle: 'red' // Optional: set a stroke color for debugging
