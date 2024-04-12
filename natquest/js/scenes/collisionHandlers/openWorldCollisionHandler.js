@@ -33,6 +33,9 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         // const isCustomOverlap  // OVERLAP AND SEE IF THERE ARE OTHER COLLISION EVENT LISTENER TYPES AND ACCOMODATE THEM
 
         if (isCustom) {
+
+            console.log('TITISO PRETTY, otherbody.customID' + otherBody.customID || ' orCaseSuckas');
+            console.log('TITISO PRETTY, otherbody.customCollisionID' + otherBody.customCollisionID || ' orCaseSuckas');
           switch (otherBody.customID) {
               
            case 'OpenWorldToInsideRoom':
