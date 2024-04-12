@@ -72,17 +72,6 @@ export function sensorHandler(scene, map, player, transitionSensors) {
       scene.scene.remove('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
        scene.scene.bringToTop('OpenWorld'); //instead of bringingopenworld to top, maybe setting visibility to 0? also maybe pause and resume would work with controls if player is passed continueously?
-       //scene.scene.add('./PlayerControls.js', PlayerControls);
-       //scene.scene.launch('PlayerControls', { player: scene.player });
-    //  scene.scene.bringToTop('PlayerControls');
-
-              
-    //   scene.scene.resume('PlayerCpmtrols');
-      // scene.scene.bringToTop('PlayerControls');        
-              //probably shouldnt need to bring to top, maybe bring controls on top after
-              //also see whats the fewest things i need to pass in order to make it work, can pass anything else pertinent after
-              //probably need to pass engine and world to preserve world state
-              //might need to pass engine and world and player along as data on resume
               break;
               
 
