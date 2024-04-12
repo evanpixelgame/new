@@ -106,42 +106,11 @@ export default class OpenWorld extends Phaser.Scene {
 
             this.events.on('resume', () => {
             console.log('OpenWorld has been resumed!');
- //   this.scene.add('./PlayerControls.js', PlayerControls);
-    this.scene.launch('PlayerControls', { player: this.player });
+           this.scene.launch('PlayerControls', { player: this.player });
         });
     
     }
     
-    /*
-this.events.on('resume', (scene, data) => {
-  console.log('event listenerinopenworld for resume');
-  // Check if the resume data contains information about the source scene
-  if (data && data.sourceScene) {
-    // Check the source scene
-    switch (data.sourceScene) {
-      case 'NewScene':
-         this.scene.pause('NewScene');
-        // Resume from InsideHouse scene
-        // Adjust player position or perform other actions specific to this scenario
-        if (this.player) {
-          // Set the player position to a specific location for when resuming from InsideHouse
-          this.player.setPosition(560, 800);
-        }
-        break;
-      default:
-        // Resume from other scenes (if needed)
-        console.log('attempt');
-        // You can add additional cases for different source scenes if necessary
-        break;
-    }
-  } else {
-    // Resume from unknown source or no additional data provided
-    // Default behavior (if any) can go here
-    console.log('whoopsies else case');
-  }
-});
-    */
-
 
   update(time, delta) {
    /*
