@@ -14,6 +14,14 @@ export function sensorMapSet(scene, map) {
     const customID = customIDProperty ? customIDProperty.value : null;
     console.log('Object Custom IDfromhandler:', customID);
 
+     const customCollisionIDProperty = object.properties.find(prop => prop.name === 'customCollisionID');
+    const customCollisionID = customCollisionIDProperty ? customCollisionIDProperty.value : null;
+    console.log('Object CustomCollision IDfromhandler:', customCollisionID);
+
+     const customOverlapIDProperty = object.properties.find(prop => prop.name === 'customOverlapID');
+    const customOverlapID = customOverlapIDProperty ? customOverlapIDProperty.value : null;
+    console.log('Object CustomOverlap IDfromhandler:', customOverlapID);
+
     const centerX = object.x + object.width / 2;
     const centerY = object.y + object.height / 2;
     const width = object.width;
