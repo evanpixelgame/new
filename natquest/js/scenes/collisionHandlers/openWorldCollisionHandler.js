@@ -71,7 +71,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               //   scene.speed /= 2;
               //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
             //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
-                this.player.velocityChange += 2; 
+                scene.player.velocityChange += 2; 
               break;
 
             case 'InsideRoomToNextRoom':
