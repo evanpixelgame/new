@@ -1,7 +1,7 @@
 export default class PlayerControls extends Phaser.Scene {
   constructor() {
     super({ key: 'PlayerControls' });
-    this.velocityChange = 6;// This is now an acceleration value for Matter.js
+    this.velocityChange = 2;// This is now an acceleration value for Matter.js
   }
 
   init(data) {
