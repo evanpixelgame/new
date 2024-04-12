@@ -69,7 +69,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
        console.log('take me back home daddy');
         scene.player.setPosition(850, 790);
        scene.scene.pause('NewScene');
-      scene.scene.remove('PlayerControls');
+     // scene.scene.remove('PlayerControls');  //JSUT CHANGED THIS
+               scene.scene.pause('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
        scene.scene.bringToTop('OpenWorld'); //instead of bringingopenworld to top, maybe setting visibility to 0? also maybe pause and resume would work with controls if player is passed continueously?
               break;
