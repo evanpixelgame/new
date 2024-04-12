@@ -63,6 +63,7 @@ export function sensorMapSet(scene, map) {
       customID: customID,
       customCollisionID: customCollisionID,
       customOverlapID: customOverlapID,
+      customClickID: customClickID,
       render: {
         fillStyle: 'transparent', // Optional: make the sensor invisible
         strokeStyle: 'red' // Optional: set a stroke color for debugging
