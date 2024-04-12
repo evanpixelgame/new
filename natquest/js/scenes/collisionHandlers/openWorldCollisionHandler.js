@@ -1,5 +1,5 @@
 // If a sensor is supposed to be more of an overlap property rather than just an on collision
-// Then make sure to give it a on collision end switch case that reverses the effect
+// Then make sure to give it a on collisionend switch case that reverses the effect after the collisionstart
 
 import NewScene from '../scenes/NewScene.js';
 import OpenWorld from '../scenes/OpenWorld.js';
@@ -62,7 +62,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               
 
             case 'fastZone':
-              console.log('cue sirens, double speed');
+              console.log('cue sirens, +2 speed');
               //   scene.speed /= 2;
               //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
             //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
@@ -101,7 +101,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
           switch (otherBody.customID) {
               
             case 'fastZone':
-              console.log('cue sirens, double speed');
+              console.log('whee woo, collision overlap over, -2 speed');
               //   scene.speed /= 2;
               //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
             //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
