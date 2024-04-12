@@ -67,7 +67,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               
             case 'BackToOpenWorld':
        console.log('take me back home daddy');
-        scene.player.setPosition(650, 770);
+        scene.player.setPosition(850, 790);
        scene.scene.pause('NewScene');
       scene.scene.remove('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
@@ -82,22 +82,12 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
               break;
 
-
-
-
             case 'InsideRoomToNextRoom':
               console.log('take me back home again daddy');
-              //   const newPosition = { x: 560, y: 715 };
-              //  scene.scene.remove('ComputerControls');
-             // scene.scene.add('NextRoom', NextRoom);
               scene.scene.start('NextRoom', {
                 player: scene.player,
                 speed: scene.speed,
-                //     camera: scene.cameras.main,
                 controls: scene.controls, // Passing the controls object here
-                //  engine: scene.matter.world,
-                //    world: scene.world,
-                //newPosition: newPosition,
               });
               break;
 
