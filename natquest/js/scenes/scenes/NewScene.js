@@ -94,5 +94,3 @@ export default class NewScene extends Phaser.Scene {
     // Update logic for the scene, if necessary
   }
 }
-
-window.NewScene = NewScene;
