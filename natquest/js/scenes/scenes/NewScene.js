@@ -57,7 +57,7 @@ export default class NewScene extends Phaser.Scene {
       layers.push(map.createLayer(i, tilesets, 0, 0));
     }
 
-    this.player = new PlayerSprite(this, 970, 664, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
+    this.player = new PlayerSprite(this, 850, 790, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
     console.log(this.player);
     this.player.setScale(1);
 
