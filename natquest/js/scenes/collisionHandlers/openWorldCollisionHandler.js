@@ -42,7 +42,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         scene.scene.pause('OpenWorld');
         scene.scene.pause('PlayerControls');
         scene.scene.resume('NewScene');
-        scene.scene.bringToTop('OpenWorld'); 
+        scene.scene.bringToTop('NewScene'); 
     } else {
       console.log('youve hit the door sensor for the first time');
       console.log('x position: ' + scene.player.x + '  y position: ' + scene.player.y);
