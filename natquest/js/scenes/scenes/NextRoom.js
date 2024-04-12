@@ -5,79 +5,41 @@ import { sensorHandler } from '../collisionHandlers/openWorldCollisionHandler.js
 export default class NextRoom extends Phaser.Scene {
   constructor() {
     super({ key: 'NextRoom' });
+
+    this.map = null;
+    this.player = null;
+    this.collisionObjects = null;
+    this.transitionSensors = null;
+    this.engine = null;
+    this.world = null;
   }
 
-
   init(data) {
-    this.controls = data.controls || null;
-    this.engine = data.engine || null;
-    // Check if the necessary data is provided
-    // Check if the necessary data is provided
-    if (!data || !data.player || !data.speed || !data.camera || !data.controls || !data.engine || !data.world) {
-      let missingData = [];
-      if (!data) {
-        missingData.push("data");
-      } else {
-        if (!data.player) missingData.push("player");
-        if (!data.speed) missingData.push("speed");
-        if (!data.camera) missingData.push("camera");
-        if (!data.controls) missingData.push("controls");
-        if (!data.engine) missingData.push("engine");
-        if (!data.world) missingData.push("world");
-      }
-      console.error("Missing required data for InsideRoom scene initialization: " + missingData.join(", "));
-      return;
-    }
-
-
-    // Initialize properties
+    // Initialize scene properties from the data passed from the previous scene
     this.player = data.player;
-    this.speed = 2;
-    this.camera = data.camera;
-    this.controls = data.controls;
-    this.engine = data.engine;
-    this.world = data.world;
-
-    // Debugging: Log initialized properties
-    console.log("NextRoom initialized with:", {
-      player: this.player,
-      speed: this.speed,
-      camera: this.camera,
-      controls: this.controls,
-      engine: this.engine,
-      world: this.world
-    });
-
-    // Check if the necessary data is provided
-    if (!data || !data.player || !data.speed || !data.camera || !data.controls || !data.engine || !data.world) {
-      let missingData = [];
-      if (!data) {
-        missingData.push("data");
-      } else {
-        if (!data.player) missingData.push("player");
-        if (!data.speed) missingData.push("speed");
-        if (!data.camera) missingData.push("camera");
-        if (!data.controls) missingData.push("controls");
-        if (!data.engine) missingData.push("engine");
-        if (!data.world) missingData.push("world");
-      }
-      console.error("Missing required data for InsideRoom scene initialization: " + missingData.join(", "));
-      return;
-    }
-
+    console.log('Player received in NextRoom:', this.player);
   }
 
   preload() {
-    // Preload assets if needed
   }
 
   create() {
+    // Use the existing Matter.js engine and world from the OpenWorld scene
+    this.engine = this.scene.get('OpenWorld').engine;
+    this.world = this.scene.get('OpenWorld').world;
 
-    // Create the new map using the loaded tilemap
-    const map = this.make.tilemap({ key: 'nextroommap' });
+    // Get the reference to the already launched CompUI scene
+    const gameUIScene = this.scene.get('GameUI');
 
+    // If the CompUI scene exists, update its gameScene property
+    if (gameUIScene) {
+      gameUIScene.gameScene = this;
+    }
 
-    // Load tileset
+    // Create the map
+    const map = this.make.tilemap({ key: 'insidemap' });
+    // Load tilesets and create layers
+
     const tilesetsData = [
       { name: 'tilesheetInterior', key: 'tilesheetInterior' },
       { name: 'tilesheetWalls', key: 'tilesheetWalls' },
@@ -94,15 +56,12 @@ export default class NextRoom extends Phaser.Scene {
     for (let i = 0; i < map.layers.length; i++) {
       layers.push(map.createLayer(i, tilesets, 0, 0));
     }
-    this.speed = 2;
-    // Initialize player sprite
-    this.player = new PlayerSprite(this, 970, 664, 'player');
 
+    this.player = new PlayerSprite(this, 850, 790, 'player'); //any values that should be carried over should be saved to GameManager and then accessed through parameters ie. new PlayerSprite(this, data.player.x, data.player.y, 'player');
+    console.log(this.player);
     this.player.setScale(1);
 
-    //   this.scene.add('ComputerControls', ComputerControls); // Add ComputerControls scene
-    //    this.controls = this.scene.get('ComputerControls'); // Retrieve controls scene
-    //   this.scene.launch('ComputerControls', { player: this.player, speed: this.speed }); // Launch ComputerControls scene
+    this.scene.launch('PlayerControls', { player: this.player });
 
 
     // Set world bounds for the player
@@ -113,27 +72,26 @@ export default class NextRoom extends Phaser.Scene {
       map.widthInPixels - 2 * boundaryOffset,
       map.heightInPixels - 2 * boundaryOffset
     );
-    // this.world.setBounds(0, 0, worldBounds.width, worldBounds.height);
 
+    // Set up collision objects and sensor mapping
     this.collisionObjects = createCollisionObjects(this, map);
     this.sensorMapping = sensorMapSet(this, map, this.sensorID);
     this.sensorHandling = sensorHandler(this, map, this.player);
 
-
+    // Constrain the camera
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05);
+    //  this.cameras.main.setZoom(2);
 
-    console.log("NextRoom end of create func status with:", {
-      player: this.player,
-      speed: this.speed,
-      camera: this.camera,
-      controls: this.controls,
-      engine: this.engine,
-      world: this.world
-    });
+                this.events.on('resume', () => {
+            console.log('NextRoom has been resumed!');
+ //   this.scene.add('./PlayerControls.js', PlayerControls);
+    this.scene.launch('PlayerControls', { player: this.player });
+        });
   }
 
   update(time, delta) {
+    // Update logic for the scene, if necessary
   }
 }
 
