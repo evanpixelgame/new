@@ -14,11 +14,8 @@ export function sensorHandler(scene, map, player, transitionSensors) {
       if (pair.bodyA === player.body || pair.bodyB === player.body) {
         // Get the other body involved in the collision
         const otherBody = pair.bodyA === player.body ? pair.bodyB : pair.bodyA;
-        // const isCustom = otherBody.properties.find(prop => prop.name === 'customID') !== undefined;
         const isCustom = otherBody.isSensor == true;
-        // const isCustomCollision //SWITCH TO THESE SO THAT IT CAN TAKE DIFFERENT TYPES OF SENSORS FOR DIFFERENT REACTIONS AND DO ANOTHER ONE FOR ON
-        // const isCustomOverlap  // OVERLAP AND SEE IF THERE ARE OTHER COLLISION EVENT LISTENER TYPES AND ACCOMODATE THEM
-
+    
         if (isCustom) {
           switch (otherBody.customID) {
               
@@ -51,24 +48,13 @@ export function sensorHandler(scene, map, player, transitionSensors) {
     break;
               
             case 'BackToOpenWorld':
-       console.log('take me back home daddy');
-        scene.player.setPosition(850, 790);
+        scene.player.setPosition(850, 790); // Set the player position slightly away so that when scene is resume, the player isn't already touching sensor
        scene.scene.pause('NewScene');
-     // scene.scene.remove('PlayerControls');  //JSUT CHANGED THIS
-               scene.scene.pause('PlayerControls');
+      scene.scene.pause('PlayerControls');
        scene.scene.resume('OpenWorld', { sourceScene: 'NewScene' });
        scene.scene.bringToTop('OpenWorld'); //instead of bringingopenworld to top, maybe setting visibility to 0? also maybe pause and resume would work with controls if player is passed continueously?
               break;
               
-
-            case 'fastZone':
-              console.log('cue sirens, +2 speed');
-              //   scene.speed /= 2;
-              //player.setVelocity(player.velocity.x * 2, player.velocity.y * 2);
-            //  Matter.Body.setVelocity(scene.player.body, { x: scene.player.body.velocity.x * 2, y: scene.player.body.velocity.y });
-                scene.player.velocityChange += 2; 
-              break;
-
             case 'InsideRoomToNextRoom':
               console.log('take me back home again daddy');
               scene.scene.start('NextRoom', {
@@ -78,10 +64,15 @@ export function sensorHandler(scene, map, player, transitionSensors) {
               });
               break;
 
+               case 'fastZone':  //Make sure to reverse the velocityChange in the collisionend case so that it acts as an overlap sensor
+              console.log('cue sirens, +2 speed');
+              scene.player.velocityChange += 2; 
+              break;
+
             // Add more cases for other sensor names as needed
             default:
               console.log(otherBody.customID);
-              // Handle other sensor names
+              // Handle other sensor names that don't have switch cases yet
               break;
           }
         } else {
@@ -103,7 +94,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
         if (isCustom) {
           switch (otherBody.customID) {
               
-            case 'fastZone':
+            case 'fastZone': //reverses the velocity change made in the collisionstart fastZone switch case
               console.log('whee woo, collision overlap over, -2 speed');
               scene.player.velocityChange -= 2; 
               break;
@@ -111,7 +102,7 @@ export function sensorHandler(scene, map, player, transitionSensors) {
             // Add more cases for other sensor names as needed
             default:
               console.log('Ended collision with ' + otherBody.customID);
-              // Handle other sensor names
+              // Handle other sensor names that don't have switch cases yet
               break;
           }
         } else {
