@@ -1,6 +1,10 @@
-//Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
-//Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
-//Make sure that all imported maps have their Object layer that deals with collisions is named "Collision Layer 1"
+// Creates collision objects, sensor objects, and covers handling of the sensor object interactions with player
+// Import as needed into scenes that have 2.5D maps that require collision/sensor object creation and handling
+// Make sure that all imported maps have their Object layer that deals with colliding with barriers/walls is named "Collision Layer 1"
+// MKW sure all imported maps have their Object layer that deals with collisions with custom sensors is named "Sensor Layer 1"
+// Make sure all custom objects in the Tiled 'Sensor Layer 1' object layer have custom property names
+// Make sure those custom property names are either: customCollsionID, customOverlapID, customClickID
+// Make sure the values of the custom property names are descriptive and able to be used easily for switch cases
 
 // INSTRUCTIONS FOR HOW TO CREATED A TILED MAP OBJECT LAYER THAT WORKS WITH THIS CODE:
 //******************************************************************************************
